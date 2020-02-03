@@ -1,10 +1,11 @@
 #class for Model1 goes here
 #Feel free to change the name of the class
 class Doctor
-	attr_reader :name
+	attr_reader :name, :field
 	@@all = []
-	def initialize(name)
+	def initialize(name, field)
 		@name = name
+		@field = field
 		@@all << self
 	end
 
@@ -12,15 +13,17 @@ class Doctor
 		@@all
 	end
 
-	def appointment
+	def appointments
 		Appointment.all.select do |appt|
 			appt.doctor == self
 		end
 	end
 
-	def patient
-		self.appointment.map do |pat|
+	def patients
+		self.appointments.map do |pat|
 			pat.patient
 		end
 	end
+
+
 end
