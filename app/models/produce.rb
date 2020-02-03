@@ -11,4 +11,21 @@ class Produce
 
         @@all << self
     end
+
+    def self.all
+        @@all
+    end
+
+    def self.produce_color(color_string)
+        Produce.all.select{|instance| instance.color == color_string}
+    end
+
+    def self.category(category_string)
+        Produce.all.select{|instance| instance.category == category_string}
+    end
+
+    def same_color
+        puts self.color
+        Produce.all.select{|instance| instance.color == self.color}.map{|x| x.name}
+    end
 end

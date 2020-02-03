@@ -1,5 +1,5 @@
 require_relative '../config/environment.rb'
-
+require 'pry'
 def reload
   load 'config/environment.rb'
 end
@@ -20,15 +20,15 @@ produce8 = Produce.new("Chiken Breast", "Pink", "Meat")
 produce9 = Produce.new("Pork Belly", "Red", "Meat")
 produce10 = Produce.new("Ear Bitten Off by a Man", "Brown", "Meat")
 
-store1 = Store.new("Acme", farmer3, produce10, 1)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-store2 = Store.new("Giant", farmer1, produce1, 98)
-
+acme = Store.new("Acme", farmer3, produce10, 1)
+giant1 = Store.new("Giant", farmer1, produce1, 98)
+giant2 = Store.new("Giant", farmer2, produce2, 2)
+giant3 = Store.new("Giant", farmer4, produce8, 30)
+giant4 = Store.new("Giant", farmer2, produce6, 400)
+giant5 = Store.new("Giant", farmer1, produce3, 200)
+giant6 = Store.new("Giant", farmer1, produce9, 140)
+giant7 = Store.new("Giant", farmer4, produce5, 434)
+giant8 = Store.new("Giant", farmer1, produce9, 30)
 
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
