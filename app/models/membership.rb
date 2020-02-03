@@ -8,7 +8,7 @@ class Membership
         @student = student
         @club = club
         @@all << self
-    end
+    endlearn 
 
     def self.all
         @@all
