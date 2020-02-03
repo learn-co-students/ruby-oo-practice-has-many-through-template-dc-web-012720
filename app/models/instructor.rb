@@ -19,6 +19,14 @@ class Instructor
         self.all.select{|instr| instr.subject == subject}
     end
 
+    def self.sort_by_average_rating 
+        self.sort_by {|inst| inst.average_rating} 
+    end 
+
+    # def self.sorted_in_subject(subject)
+    #     self.find_by_subject(subject)
+    # end 
+
     def sessions 
         Session.all.select {|sess| sess.instructor == self}
     end 
