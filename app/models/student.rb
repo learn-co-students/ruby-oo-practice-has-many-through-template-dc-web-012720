@@ -6,9 +6,18 @@ class Student
     @@all = []
     def initialize(name)
         @name = name
+        @@all << self
     end
 
     def self.all
         @@all
     end
+
+    def sessions 
+        Sessions.all.select {|sess| sess.student == self}
+    end 
+
+    def instructors
+        self.sessions.map {|sess| sess.instructor}
+    end 
 end
