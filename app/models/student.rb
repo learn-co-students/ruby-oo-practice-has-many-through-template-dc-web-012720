@@ -14,7 +14,7 @@ class Student
     end
 
     def sessions 
-        Sessions.all.select {|sess| sess.student == self}
+        Session.all.select {|sess| sess.student == self}
     end 
 
     def instructors

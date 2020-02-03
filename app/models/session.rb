@@ -14,4 +14,12 @@ class Session
         @@all
     end
 
+    def rate_instructor(stars)
+        if stars.class != Integer || stars > 5 || stars < 1
+            puts "Please enter a number 1-5"
+        else
+            self.instructor.add_rating(stars)
+        end
+    end
+
 end
